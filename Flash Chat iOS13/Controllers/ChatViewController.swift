@@ -96,7 +96,7 @@ extension ChatViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: K.cellIdentifier, for: indexPath) as! MessageTableViewCell
         cell.textLabel?.text = messages[indexPath.row].body
         return cell
-    }
+    }    
     
     
 }
