@@ -47,6 +47,8 @@ class ChatViewController: UIViewController {
                             
                             DispatchQueue.main.async {
                                 self.messagesTableView.reloadData()
+                                let indexpath = IndexPath(row: self.messages.count - 1, section: 0)
+                                self.messagesTableView.scrollToRow(at: indexpath, at: .top, animated: true)
                             }
                         }
                     }
@@ -74,6 +76,9 @@ class ChatViewController: UIViewController {
                 if let error = error {
                     print(error)
                 }else {
+                    DispatchQueue.main.async {
+                        self.messageTextfield.text = ""
+                    }
                     print("success")
                 }
             }
